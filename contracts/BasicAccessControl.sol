@@ -4,8 +4,11 @@ pragma solidity ^0.8.0;
 contract BasicControlContract {
     address public admin;
 
+    event AdminRegistered(address indexed _from);
+
     constructor() {
         admin = msg.sender;
+        emit AdminRegistered(admin);
     }
 
     modifier onlyAdmin() {

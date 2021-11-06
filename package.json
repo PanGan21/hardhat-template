@@ -5,9 +5,11 @@
   "author": "PanGan21",
   "license": "MIT",
   "scripts": {
+    "build": " rm -rf ./build && tsc -p .",
     "clean": "yarn hardhat clean",
     "compile": "yarn hardhat compile",
-    "test": "yarn hardhat test"
+    "test": "yarn hardhat test",
+    "deploy:local": "yarn clean && yarn compile && yarn run build && npx hardhat run build/scripts/basic-access-control.deploy.js"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "2.0.2",
